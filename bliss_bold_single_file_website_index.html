@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bliss & Bold — Grace Meets Grit</title>
+  <meta name="description" content="Bliss & Bold — Sports gear, Jewelry & Perfumes. Grace Meets Grit." />
+  <style>
+    :root{
+      --bg:#0b0b0b; /* near-black */
+      --gold:#c9a84a;
+      --muted:#bfbfbf;
+      --card:#111111;
+      --accent:#e6d9b3;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--muted);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,var(--gold),#fff2cc);display:flex;align-items:center;justify-content:center;color:#0b0b0b;font-weight:700}
+    .brand{font-size:18px;color:var(--accent);font-weight:700}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);padding:6px 10px;border-radius:6px}
+    nav a.cta{background:transparent;border:1px solid rgba(201,168,74,0.14);color:var(--gold)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:28px 0}
+    .hero .text h1{font-size:38px;margin:0 0 12px;color:var(--gold);letter-spacing:0.6px}
+    .hero .text p{margin:0 0 18px;color:var(--muted);line-height:1.5}
+    .btn{display:inline-block;padding:12px 18px;border-radius:8px;background:var(--gold);color:#081010;font-weight:700}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:16px;border-radius:12px}
+    .hero-card img{width:100%;border-radius:8px}
+
+    /* Sections */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+    .card{background:var(--card);padding:14px;border-radius:10px}
+    .card h3{margin:6px 0 4px;color:var(--accent)}
+    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:28px}
+    .product{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:10px;text-align:center}
+    .product img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+    .price{font-weight:700;color:var(--gold);margin:8px 0}
+    .small{font-size:13px;color:#9f9f9f}
+
+    /* About / Footer */
+    .about{display:flex;gap:20px;align-items:center;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03)}
+    footer{padding:22px 0;color:#8f8f8f;border-top:1px solid rgba(255,255,255,0.03)}
+
+    /* Cart */
+    .cart-toggle{position:fixed;right:18px;bottom:18px;background:var(--gold);color:#0b0b0b;padding:12px 14px;border-radius:999px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,0.6);cursor:pointer}
+    .cart-sheet{position:fixed;right:18px;bottom:72px;width:320px;max-height:65vh;overflow:auto;background:#0f0f0f;padding:12px;border-radius:12px;border:1px solid rgba(201,168,74,0.12);display:none}
+    .cart-item{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .cart-item img{width:54px;height:54px;object-fit:cover;border-radius:8px}
+    .cart-total{font-weight:800;color:var(--gold);text-align:right;margin-top:10px}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(1,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="mark">BB</div>
+        <div>
+          <div class="brand">Bliss & Bold</div>
+          <div class="small">Grace Meets Grit</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" id="open-cart">Cart (<span id="cart-count">0</span>)</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="text">
+        <h1>Bliss & Bold</h1>
+        <p>Where <strong>Grace</strong> meets <strong>Grit</strong>. Curated sports gear, elegant jewelry and signature perfumes — designed for women who shine inside out.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn" href="#shop">Shop Now</a>
+          <a style="padding:12px 18px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);" href="#about">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hero">
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="grid">
+      <div class="card">
+        <h3>🏋️ Sports Gear</h3>
+        <p class="small">Yoga mats, gloves, footballs — durable & stylish.</p>
+      </div>
+      <div class="card">
+        <h3>💎 Jewelry</h3>
+        <p class="small">Minimal & statement pieces crafted for everyday wear.</p>
+      </div>
+      <div class="card">
+        <h3>🌸 Perfumes</h3>
+        <p class="small">Signature scents that stay with you.</p>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="shop">
+      <h2 style="color:var(--gold);margin-bottom:10px">Featured Products</h2>
+      <div class="products" id="product-list">
+
+        <!-- Product 1 -->
+        <div class="product" data-id="p1" data-name="Premium Yoga Mat" data-price="3500">
+          <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b97?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="yoga mat">
+          <div style="font-weight:700;color:var(--accent)">Premium Yoga Mat</div>
+          <div class="small">Non-slip, 6mm thick</div>
+          <div class="price">Rs 3,500</div>
+          <button onclick="addToCart('p1')" style="padding:8px 10px;border-radius:8px;border:0;background:var(--gold);font-weight:700;cursor:pointer">Add</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product" data-id="p2" data-name="Boxing Gloves" data-price="4200">
+          <img src="https://images.unsplash.com/photo-1526406915898-7be8f9b0a0c3?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="gloves">
+          <div style="font-weight:700;color:var(--accent)">Boxing Gloves</div>
+          <div class="small">PU leather, durable</div>
+          <div class="price">Rs 4,200</div>
+          <button onclick="addToCart('p2')" style="padding:8px 10px;border-radius:8px;border:0;background:var(--gold);font-weight:700;cursor:pointer">Add</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product" data-id="p3" data-name="Classic Football" data-price="2200">
+          <img src="https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="football">
+          <div style="font-weight:700;color:var(--accent)">Classic Football</div>
+          <div class="small">Official size, stitched</div>
+          <div class="price">Rs 2,200</div>
+          <button onclick="addToCart('p3')" style="padding:8px 10px;border-radius:8px;border:0;background:var(--gold);font-weight:700;cursor:pointer">Add</button>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product" data-id="p4" data-name="Minimal Earrings" data-price="1800">
+          <img src="https://images.unsplash.com/photo-1520975862211-8a23e3b3d1a8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="earrings">
+          <div style="font-weight:700;color:var(--accent)">Minimal Earrings</div>
+          <div class="small">Gold plated, hypoallergenic</div>
+          <div class="price">Rs 1,800</div>
+          <button onclick="addToCart('p4')" style="padding:8px 10px;border-radius:8px;border:0;background:var(--gold);font-weight:700;cursor:pointer">Add</button>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product" data-id="p5" data-name="Signature Perfume 50ml" data-price="3200">
+          <img src="https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="perfume">
+          <div style="font-weight:700;color:var(--accent)">Signature Perfume 50ml</div>
+          <div class="small">Long-lasting floral woody</div>
+          <div class="price">Rs 3,200</div>
+          <button onclick="addToCart('p5')" style="padding:8px 10px;border-radius:8px;border:0;background:var(--gold);font-weight:700;cursor:pointer">Add</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <div style="flex:1">
+        <h3 style="color:var(--gold);margin-top:0">About Bliss & Bold</h3>
+        <p style="margin:6px 0 0;color:var(--muted)">Bliss & Bold celebrates the balance between confidence and charm. We choose products that boost performance and celebrate beauty — for everyday women who train, perform and shine.</p>
+      </div>
+      <div style="width:220px;text-align:right">
+        <div class="small">Follow us</div>
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding:18px 0">
+      <h3 style="color:var(--gold)">Get in touch</h3>
+      <form id="contact-form" onsubmit="return submitContact(event)" style="display:flex;gap:8px;flex-wrap:wrap">
+        <input required name="name" placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:0;background:#0b0b0b;color:var(--muted)" />
+        <input required name="email" placeholder="Email or phone" style="flex:1;padding:10px;border-radius:8px;border:0;background:#0b0b0b;color:var(--muted)" />
+        <textarea required name="message" placeholder="Message / Order details" style="width:100%;padding:10px;border-radius:8px;border:0;background:#0b0b0b;color:var(--muted)"></textarea>
+        <button class="btn" style="border:0">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>© Bliss & Bold • Grace Meets Grit</div>
+        <div class="small">Made with ❤️ • Sialkot / Pakistan</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- CART UI -->
+  <div class="cart-toggle" id="cart-btn">Cart (<span id="cart-count-2">0</span>)</div>
+  <div class="cart-sheet" id="cart-sheet">
+    <h4 style="margin:4px 0 8px;color:var(--gold)">Your Cart</h4>
+    <div id="cart-items"></div>
+    <div class="cart-total" id="cart-total">Total: Rs 0</div>
+    <div style="text-align:right;margin-top:8px"><button class="btn" onclick="checkout()">Checkout</button></div>
+  </div>
+
+  <script>
+    // Simple cart (client-side). Replace with real backend for production.
+    const cart = {};
+    function addToCart(id){
+      const el = document.querySelector(`.product[data-id='${id}']`);
+      const name = el.dataset.name;
+      const price = Number(el.dataset.price);
+      if(cart[id]) cart[id].qty += 1; else cart[id] = {name,price,qty:1, img: el.querySelector('img').src};
+      renderCart();
+      flashAdded(el);
+    }
+    function flashAdded(el){
+      el.style.boxShadow = '0 6px 20px rgba(201,168,74,0.12)';
+      setTimeout(()=>el.style.boxShadow='',700);
+    }
+    function renderCart(){
+      const itemsWrap = document.getElementById('cart-items');
+      itemsWrap.innerHTML = '';
+      let total = 0; let count = 0;
+      for(const id in cart){
+        const it = cart[id];
+        total += it.price * it.qty; count += it.qty;
+        const div = document.createElement('div'); div.className='cart-item';
+        div.innerHTML = `<img src='${it.img}'><div style='flex:1'><div style='font-weight:700;color:var(--accent)'>${it.name}</div><div class='small'>Rs ${it.price} x ${it.qty}</div></div><div><button onclick="dec('${id}')" style='margin-right:6px'>-</button><button onclick="inc('${id}')">+</button></div>`;
+        itemsWrap.appendChild(div);
+      }
+      document.getElementById('cart-total').innerText = `Total: Rs ${total}`;
+      document.getElementById('cart-count').innerText = count;
+      document.getElementById('cart-count-2').innerText = count;
+    }
+    function inc(id){ cart[id].qty +=1; renderCart(); }
+    function dec(id){ cart[id].qty -=1; if(cart[id].qty<=0) delete cart[id]; renderCart(); }
+
+    // Cart toggle
+    const cartBtn = document.getElementById('cart-btn');
+    const cartSheet = document.getElementById('cart-sheet');
+    cartBtn.addEventListener('click', ()=>{cartSheet.style.display = cartSheet.style.display === 'block' ? 'none':'block'});
+    document.getElementById('open-cart').addEventListener('click', ()=>{cartSheet.style.display = 'block'});
+
+    function checkout(){
+      // For now open mailto with order summary — replace with payment + backend later.
+      let total = 0; let text = 'Order%20from%20Bliss%20%26%20Bold%0A%0A';
+      for(const id in cart){ const it = cart[id]; total += it.qty * it.price; text += `${encodeURIComponent(it.name)}%20x${it.qty}%20-%20Rs%20${it.price*it.qty}%0A`; }
+      text += `%0ATotal:%20Rs%20${total}%0A%0AName:%20%0APhone/Email:%20%0AAddress:%20`;
+      const mail = `mailto:orders@blissandbold.com?subject=New%20Order&body=${text}`;
+      window.location.href = mail;
+    }
+
+    // Simple contact handler
+    function submitContact(e){
+      e.preventDefault();
+      const f = e.target; const name = f.name.value; const email = f.email.value; const message = f.message.value;
+      const mail = `mailto:orders@blissandbold.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(message + '\n\n' + email)}`;
+      window.location.href = mail;
+      return false;
+    }
+
+    // Prefill with 0 cart
+    renderCart();
+  </script>
+</body>
+</html>
